@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# AWSなどの機密情報ファイルはGit管理対象外にする
+src/main/resources/application.properties
