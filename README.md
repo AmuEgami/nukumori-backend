@@ -4,7 +4,7 @@ Spring Boot で構築した社内交流アプリのバックエンド。投稿�
 ## 概要
 - Spring Boot を使用したREST API構成
 - AWS（DynamoDB / Cognito）と連携
-- ユーザープロフィール登録、投稿管理を担当
+- ユーザープロフィール登録、投稿機能を実装
 
 ## 技術スタック
 - Java / Spring Boot
