@@ -8,8 +8,6 @@ import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
 import org.springframework.beans.factory.annotation.Value;
 
-import java.net.URI;
-
 @Configuration
 public class DynamoDbConfig {
 	
@@ -20,12 +18,12 @@ public class DynamoDbConfig {
     private String secretKey;
 
     @Value("${aws.region}")
-    private String region;
+    private String region; 
 
     @Bean
     public DynamoDbClient dynamoDbClient() {
         return DynamoDbClient.builder()
-                .region(Region.AP_NORTHEAST_1) // 東京リージョン
+                .region(Region.of(region)) 
                 .credentialsProvider(
                         StaticCredentialsProvider.create(
                                 AwsBasicCredentials.create(
@@ -34,7 +32,6 @@ public class DynamoDbConfig {
                                 )
                         )
                 )
-
                 .build();
     }
 }

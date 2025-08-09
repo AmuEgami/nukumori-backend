@@ -9,8 +9,7 @@ import com.example.nukumori.service.PostService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
 import java.util.List;
-@CrossOrigin(origins = "http://localhost:3000")
-//@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/posts")
 public class PostController {

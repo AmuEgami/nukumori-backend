@@ -6,14 +6,15 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/api/profile")
+@RequestMapping("/profile")
 public class UserProfileController {
 
     private final UserProfileService profileService;
 
     public UserProfileController(UserProfileService profileService) {
+    	System.out.println("✅✅✅ UserProfileController initialized ✅✅✅");
         this.profileService = profileService;
     }
 
@@ -30,6 +31,7 @@ public class UserProfileController {
     
     @GetMapping("/{userId}")
     public ResponseEntity<UserProfile> getProfile(@PathVariable String userId) {
+    	System.out.println("getProfile: userId = " + userId);
         return profileService.getProfile(userId)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());

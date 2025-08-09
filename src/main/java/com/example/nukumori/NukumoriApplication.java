@@ -3,7 +3,7 @@ package com.example.nukumori;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.example.nukumori")
 public class NukumoriApplication {
 
 	public static void main(String[] args) {

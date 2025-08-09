@@ -22,6 +22,9 @@ public class UserProfileService {
     
     // プロフィール取得
     public Optional<UserProfile> getProfile(String userId) {
-        return userProfileRepository.findById(userId);
+    	System.out.println("Service: getProfile called with userId = " + userId);
+        Optional<UserProfile> profile = userProfileRepository.findById(userId);
+        System.out.println("Service: Retrieved profile = " + profile);
+        return profile;
     }
 }
